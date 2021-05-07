@@ -9,7 +9,7 @@ app.use(express.static("public"));
 const database = [];
 
 app.get("/", function(req, res) {
-    res.render("home");
+    res.render("home", {content: database});
 })
 
 app.get("/compose", function(req, res) {

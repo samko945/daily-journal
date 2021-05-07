@@ -1,0 +1,44 @@
+header {
+    background-color: #ebecec;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    letter-spacing: 1px;
+
+    h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 200;
+        color: #5e5e5e;
+    }
+}
+
+nav {
+    display: flex;
+    align-items: center;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin: 0;
+
+        li {
+            
+            a {
+                text-decoration: none !important;
+                font-weight: 300;
+                color: #808080;
+                &:hover {
+                    color: #131313;
+                }
+            }
+
+            &+li {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+

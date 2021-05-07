@@ -26,6 +26,14 @@ app.post("/compose", function(req, res) {
     console.log(database)
 })
 
+app.get("/posts/:postTitle", function(req, res) {
+    const route = req.params.postTitle.toLowerCase().split(" ").join("-");
+    const post = database.find((item) => item.title.toLowerCase().split(" ").join("-") === route);
+    if (post) {
+        res.render("post", {content: post, route: route})
+    }
+})
+
 app.listen(5000, function() {
     console.log("Server started on port 5000.");
 })

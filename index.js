@@ -17,8 +17,13 @@ app.get("/compose", function(req, res) {
 })
 
 app.post("/compose", function(req, res) {
-    console.log(req.body)
+    const newData = {
+        title: req.body.title,
+        text: req.body.text
+    }
+    database.push(newData);
     res.redirect("/");
+    console.log(database)
 })
 
 app.listen(5000, function() {

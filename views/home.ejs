@@ -1,4 +1,8 @@
 <%- include("partials/header") %>
 
+<% content.forEach(item => { %>
+    <h2><%=item.title%></h2>
+    <p><%=item.text%></p>
+<% }); %>
 
 <%- include("partials/footer") %>

@@ -2,8 +2,12 @@
 
 <div class="page-container">
     <% content.forEach(item => { %>
-        <h2><%=item.title%></h2>
-        <p><%=item.text%></p>
+        <h2><%= item.title %></h2>
+        <% if (item.text.length > 250) { %>
+            <p><%= item.text.substring(0, 250) %>...<a href="/posts/<%= item.title %>">Read more</a></p>
+        <% } else { %>
+            <p><%= item.text %></p>
+        <% } %>
     <% }); %>
 </div>
 

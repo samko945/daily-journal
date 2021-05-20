@@ -1,14 +1,16 @@
 <%- include("partials/header") %>
 
 <div class="page-container">
-    <% content.forEach(item => { %>
+    <% if (typeof(content) != undefined) { %>
+            <% content.forEach(item => { %>
         <h2><%= item.title %></h2>
         <% if (item.text.length > 250) { %>
-            <p><%= item.text.substring(0, 250) %>...<a href="/posts/<%= item.title %>">Read more</a></p>
+            <p><%= item.text.substring(0, 250) %>...<a href="/posts/<%= item.titleAddress %>">Read more</a></p>
         <% } else { %>
             <p><%= item.text %></p>
         <% } %>
     <% }); %>
+    <% } %>
 </div>
 
 <%- include("partials/footer") %>

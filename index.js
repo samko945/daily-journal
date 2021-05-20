@@ -47,6 +47,7 @@ app.get("/posts/:route", function(req, res) {
     }).catch(err => console.error(err));
 })
 
-app.listen(5000, function() {
-    console.log("Server started on port 5000.");
+const port = process.env.PORT || 3000;
+app.listen(port, function() {
+    console.log(`Server started on port ${port}.`);
 })
